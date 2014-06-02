@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:ect="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl#"
+	xml:base="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl">
+	<owl:Class rdf:ID="X10Device">
+		<rdfs:label>X10 Device</rdfs:label>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="PhysicalThing" />
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="X10LampDevice">
+		<rdfs:label>X10 Lamp Device</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#X10Device" />
+	</owl:Class>	
+	<ect:ComponentDetails rdf:ID="X10Component">
+		<dc:title>X10_OneWay</dc:title>
+		<ect:setProperty>
+			<ect:PropertyDetails rdf:ID="X10ComponentPort">
+				<dc:title>configPort</dc:title>
+				<rdf:value>COM1</rdf:value>
+			</ect:PropertyDetails>
+		</ect:setProperty>
+		<ect:setProperty>
+			<ect:PropertyDetails rdf:ID="X10ComponentAppliances">
+				<dc:title>applianceModuleAddresses</dc:title>
+				<rdf:value>A3 A4</rdf:value>
+			</ect:PropertyDetails>
+		</ect:setProperty>
+		<ect:setProperty>
+			<ect:PropertyDetails rdf:ID="X10ComponentLamps">
+				<dc:title>lampModuleAddresses</dc:title> 
+				<rdf:value>A1 A2</rdf:value>
+			</ect:PropertyDetails>
+		</ect:setProperty>		
+	</ect:ComponentDetails>
+	<ect:ThingDetails rdf:ID="X10SceneObject">
+		<ect:thingType rdf:resource="#SceneObject" />
+		<ect:createLink>
+			<ect:Link>
+				<ect:source>visible</ect:source>
+				<ect:destination>on</ect:destination>
+				<ect:reverseLink>true</ect:reverseLink>
+			</ect:Link>
+		</ect:createLink>
+	</ect:ThingDetails>
+	<ect:ThingDetails rdf:ID="X10Marker">
+		<ect:thingType rdf:resource="#ARMarker" />
+		<ect:createLink>
+			<ect:Link>
+				<ect:source>glyphVisible</ect:source>		
+				<ect:destination>on</ect:destination>
+				<ect:reverseLink>true</ect:reverseLink>
+			</ect:Link>
+		</ect:createLink>
+	</ect:ThingDetails>	
+	<ect:ThingDetails rdf:ID="X10MarkerInteraction">
+		<ect:thingType rdf:resource="#MarkerInteraction" />
+		<ect:createLink>
+			<ect:Link>
+				<ect:source>isClose</ect:source>				
+				<ect:destination>on</ect:destination>
+				<ect:reverseLink>true</ect:reverseLink>
+			</ect:Link>
+		</ect:createLink>
+	</ect:ThingDetails>		
+	<ect:X10Device rdf:ID="x10Device1">
+		<rdfs:label>X10 Lamp Device A1</rdfs:label>
+		<ect:classification>X10</ect:classification>
+		<ect:plugsInto rdf:resource="#X10SceneObject" />
+		<ect:plugsInto rdf:resource="#X10Marker" />
+		<ect:plugsInto rdf:resource="#X10MarkerInteraction" />
+		<ect:createComponent rdf:resource="#X10Component" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>X10_LampModule</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>address</dc:title>
+						<rdf:value>A1</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/x10module.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:X10Device>
+	<ect:X10LampDevice rdf:ID="x10Device2">
+		<rdfs:label>X10 Lamp Device A2</rdfs:label>
+		<ect:classification>X10</ect:classification>
+		<ect:plugsInto rdf:resource="#X10SceneObject" />
+		<ect:plugsInto rdf:resource="#X10Marker" />		
+		<ect:plugsInto rdf:resource="#X10MarkerInteraction" />		
+		<ect:createComponent rdf:resource="#X10Component" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>X10_LampModule</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>address</dc:title>
+						<rdf:value>A2</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/x10module.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:X10LampDevice>
+	<ect:X10Device rdf:ID="x10Device3">
+		<rdfs:label>X10 Appliance Device A3</rdfs:label>
+		<ect:classification>X10</ect:classification>
+		<ect:plugsInto rdf:resource="#X10SceneObject" />
+		<ect:plugsInto rdf:resource="#X10Marker" />		
+		<ect:plugsInto rdf:resource="#X10MarkerInteraction" />		
+		<ect:createComponent rdf:resource="#X10Component" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>X10_ApplianceModule</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>address</dc:title>
+						<rdf:value>A3</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/x10module.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:X10Device>
+	<ect:X10LampDevice rdf:ID="x10Device4">
+		<rdfs:label>X10 Appliance Device A4</rdfs:label>
+		<ect:classification>X10</ect:classification>
+		<ect:plugsInto rdf:resource="#X10SceneObject" />
+		<ect:plugsInto rdf:resource="#X10Marker" />		
+		<ect:plugsInto rdf:resource="#X10MarkerInteraction" />		
+		<ect:createComponent rdf:resource="#X10Component" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>X10_ApplianceModule</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>address</dc:title>
+						<rdf:value>A4</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/x10module.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:X10LampDevice>		
+</rdf:RDF>

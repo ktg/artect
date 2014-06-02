@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:ect="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl#"
+	xml:base="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl">
+	<owl:Class rdf:ID="WebPage">
+		<rdfs:label>Document</rdfs:label>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="PhysicalThing" />
+		</rdfs:subClassOf>
+	</owl:Class>
+	<ect:UI rdf:ID="WebPageFileSelectUI">
+		<ect:control>
+			<ect:FileSelect rdf:ID="WebPageFileSelectControl">
+				<rdfs:label>Document</rdfs:label>
+				<dc:title>content</dc:title>
+			</ect:FileSelect>
+		</ect:control>
+	</ect:UI>	
+	<ect:ThingDetails rdf:ID="WebPageARMarkerDetails">
+		<ect:thingType rdf:resource="#ARMarker" />
+		<ect:createLink>
+			<ect:Link>
+				<ect:source>glyphVisible</ect:source>		
+				<ect:destination>displayContent</ect:destination>
+				<ect:reverseLink>true</ect:reverseLink>
+			</ect:Link>
+		</ect:createLink>
+	</ect:ThingDetails>
+	<ect:ThingDetails rdf:ID="WebPageMarkerInteractionDetails">
+		<ect:thingType rdf:resource="#MarkerInteraction" />
+		<ect:createLink>
+			<ect:Link>
+				<ect:source>isClose</ect:source>				
+				<ect:destination>displayContent</ect:destination>
+				<ect:reverseLink>true</ect:reverseLink>
+			</ect:Link>
+		</ect:createLink>
+	</ect:ThingDetails>	
+	<ect:ThingDetails rdf:ID="WebPageObjectDetails">
+		<ect:thingType rdf:resource="#SceneObject" />
+		<ect:createLink>
+			<ect:Link>
+				<ect:source>visible</ect:source>
+				<ect:destination>displayContent</ect:destination>
+				<ect:reverseLink>true</ect:reverseLink>
+			</ect:Link>
+		</ect:createLink>
+	</ect:ThingDetails>	
+	<!--<ect:WebPage rdf:ID="TestWebPage1">
+		<rdfs:label>Web Page Test 1</rdfs:label>
+		<ect:classification>Documents</ect:classification>
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>SwingBrowserComponent</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>content</dc:title>
+						<rdf:value>http://www.google.com</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>			
+		</ect:createComponent>
+		<ect:plugsInto rdf:resource="#WebPageARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#WebPageMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#WebPageObjectDetails" />		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/document.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:WebPage>
+	<ect:WebPage rdf:ID="TestWebPage2">
+		<rdfs:label>Web Page Test 2</rdfs:label>
+		<ect:classification>Documents</ect:classification>
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>SwingBrowserComponent</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>content</dc:title>
+						<rdf:value>http://news.bbc.co.uk</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>			
+		</ect:createComponent>
+		<ect:plugsInto rdf:resource="#WebPageARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#WebPageMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#WebPageObjectDetails" />		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/document.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:WebPage>-->
+	<!--<ect:WebPage rdf:ID="DefaultDocument">
+		<rdfs:label>Default Document</rdfs:label>
+		<ect:classification>Documents</ect:classification>
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>SwingBrowserComponent</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>content</dc:title>
+						<rdf:value>file:///C:/inScape/ect/resources/arauthoring/documents/default.html</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>			
+		</ect:createComponent>
+		<ect:plugsInto rdf:resource="#WebPageARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#WebPageMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#WebPageObjectDetails" />		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/document.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:WebPage>-->
+	<ect:WebPage rdf:ID="CustomDocument1">
+		<rdfs:label>Custom Document 1</rdfs:label>
+		<ect:classification>Documents</ect:classification>
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>SwingBrowserComponent</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>content</dc:title>
+						<rdf:value>file:///C:/inScape/ect/resources/arauthoring/documents/custom1.html</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>			
+		</ect:createComponent>
+		<ect:plugsInto rdf:resource="#WebPageARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#WebPageMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#WebPageObjectDetails" />		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/document.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#WebPageFileSelectUI" />		
+	</ect:WebPage>		
+	<ect:WebPage rdf:ID="CustomDocument2">
+		<rdfs:label>Custom Document 2</rdfs:label>
+		<ect:classification>Documents</ect:classification>
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>SwingBrowserComponent</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>content</dc:title>
+						<rdf:value>file:///C:/inScape/ect/resources/arauthoring/documents/custom2.html</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>			
+		</ect:createComponent>
+		<ect:plugsInto rdf:resource="#WebPageARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#WebPageMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#WebPageObjectDetails" />		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/document.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#WebPageFileSelectUI" />		
+	</ect:WebPage>		
+	<ect:WebPage rdf:ID="CustomDocument3">
+		<rdfs:label>Custom Document 3</rdfs:label>
+		<ect:classification>Documents</ect:classification>
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>SwingBrowserComponent</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>content</dc:title>
+						<rdf:value>file:///C:/inScape/ect/resources/arauthoring/documents/custom3.html</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>			
+		</ect:createComponent>
+		<ect:plugsInto rdf:resource="#WebPageARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#WebPageMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#WebPageObjectDetails" />		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/document.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#WebPageFileSelectUI" />		
+	</ect:WebPage>		
+	<ect:WebPage rdf:ID="CustomDocument4">
+		<rdfs:label>Custom Document 4</rdfs:label>
+		<ect:classification>Documents</ect:classification>
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>SwingBrowserComponent</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>content</dc:title>
+						<rdf:value>file:///C:/inScape/ect/resources/arauthoring/documents/custom4.html</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>			
+		</ect:createComponent>
+		<ect:plugsInto rdf:resource="#WebPageARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#WebPageMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#WebPageObjectDetails" />		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/document.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#WebPageFileSelectUI" />		
+	</ect:WebPage>		
+	<ect:WebPage rdf:ID="CustomDocument5">
+		<rdfs:label>Custom Document 5</rdfs:label>
+		<ect:classification>Documents</ect:classification>
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>SwingBrowserComponent</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>content</dc:title>
+						<rdf:value>file:///C:/inScape/ect/resources/arauthoring/documents/custom5.html</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>			
+		</ect:createComponent>
+		<ect:plugsInto rdf:resource="#WebPageARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#WebPageMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#WebPageObjectDetails" />		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/document.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#WebPageFileSelectUI" />		
+	</ect:WebPage>		
+	<ect:WebPage rdf:ID="CustomDocument6">
+		<rdfs:label>Custom Document 6</rdfs:label>
+		<ect:classification>Documents</ect:classification>
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>SwingBrowserComponent</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>content</dc:title>
+						<rdf:value>file:///C:/inScape/ect/resources/arauthoring/documents/custom6.html</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>			
+		</ect:createComponent>
+		<ect:plugsInto rdf:resource="#WebPageARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#WebPageMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#WebPageObjectDetails" />		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/document.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#WebPageFileSelectUI" />		
+	</ect:WebPage>		
+	<ect:WebPage rdf:ID="CustomDocument7">
+		<rdfs:label>Custom Document 7</rdfs:label>
+		<ect:classification>Documents</ect:classification>
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>SwingBrowserComponent</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>content</dc:title>
+						<rdf:value>file:///C:/inScape/ect/resources/arauthoring/documents/custom7.html</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>			
+		</ect:createComponent>
+		<ect:plugsInto rdf:resource="#WebPageARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#WebPageMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#WebPageObjectDetails" />		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/document.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#WebPageFileSelectUI" />		
+	</ect:WebPage>		
+	<ect:WebPage rdf:ID="CustomDocument8">
+		<rdfs:label>Custom Document 8</rdfs:label>
+		<ect:classification>Documents</ect:classification>
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>SwingBrowserComponent</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>content</dc:title>
+						<rdf:value>file:///C:/inScape/ect/resources/arauthoring/documents/custom8.html</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>			
+		</ect:createComponent>
+		<ect:plugsInto rdf:resource="#WebPageARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#WebPageMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#WebPageObjectDetails" />		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/document.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#WebPageFileSelectUI" />		
+	</ect:WebPage>
+	<ect:WebPage rdf:ID="CustomDocument9">
+		<rdfs:label>Custom Document 9</rdfs:label>
+		<ect:classification>Documents</ect:classification>
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>SwingBrowserComponent</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>content</dc:title>
+						<rdf:value>file:///C:/inScape/ect/resources/arauthoring/documents/custom9.html</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>			
+		</ect:createComponent>
+		<ect:plugsInto rdf:resource="#WebPageARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#WebPageMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#WebPageObjectDetails" />		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/document.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#WebPageFileSelectUI" />		
+	</ect:WebPage>		
+	<ect:WebPage rdf:ID="CustomDocument10">
+		<rdfs:label>Custom Document 10</rdfs:label>
+		<ect:classification>Documents</ect:classification>
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>SwingBrowserComponent</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>content</dc:title>
+						<rdf:value>file:///C:/inScape/ect/resources/arauthoring/documents/custom10.html</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>			
+		</ect:createComponent>
+		<ect:plugsInto rdf:resource="#WebPageARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#WebPageMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#WebPageObjectDetails" />		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/document.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#WebPageFileSelectUI" />		
+	</ect:WebPage>		
+</rdf:RDF>

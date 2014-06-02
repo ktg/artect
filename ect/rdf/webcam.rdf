@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:ect="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl#"
+	xml:base="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl">
+	<owl:Class rdf:ID="Webcam">
+		<rdfs:label>Webcam</rdfs:label>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="Device" />
+		</rdfs:subClassOf>
+	</owl:Class>
+	<ect:Webcam>
+		<rdfs:label>Webcam</rdfs:label>
+		<rdfs:comment>Plugged into a computer</rdfs:comment>
+		<ect:plugsInto>
+			<ect:ThingDetails>
+				<ect:thingType rdf:resource="#Computer" />
+			</ect:ThingDetails>
+		</ect:plugsInto>
+		<ect:createComponent rdf:resource="#workshopScene" />
+		<ect:createComponent>
+			<ect:ComponentDetails rdf:ID="WebCamponentDetails">
+				<dc:title>JMFVideoCaptureManager</dc:title>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>JMFVideoCaptureDevice</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>status</dc:title>
+						<rdf:value>OK</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>					
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>delayMs</dc:title>
+						<rdf:value>0</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>				
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/webcam.jpg</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:Webcam>
+</rdf:RDF>

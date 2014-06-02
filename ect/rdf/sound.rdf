@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:ect="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl#"
+	xml:base="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl">
+	<owl:Class rdf:ID="Sound">
+		<rdfs:label>Sound Clip</rdfs:label>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="PhysicalThing" />
+		</rdfs:subClassOf>
+		<ect:image>
+			<ect:MediaFileLocation rdf:ID="soundIcon">
+				<ect:filePath>icons/sound.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</owl:Class>
+	<ect:PropertyDetails rdf:ID="soundDelayPropertyDetails">
+		<dc:title>stopSoundDelay</dc:title>
+		<rdf:value>2500</rdf:value>
+	</ect:PropertyDetails>
+	<ect:ThingDetails rdf:ID="SoundARMarkerDetails">
+		<ect:thingType rdf:resource="#ARMarker" />
+		<ect:createLink>
+			<ect:Link>
+				<ect:source>glyphVisible</ect:source>
+				<ect:destination>play</ect:destination>
+				<ect:reverseLink>true</ect:reverseLink>
+			</ect:Link>
+		</ect:createLink>
+	</ect:ThingDetails>
+	<ect:ThingDetails rdf:ID="SoundMarkerInteractionDetails">
+		<ect:thingType rdf:resource="#MarkerInteraction" />
+		<ect:createLink>
+			<ect:Link>
+				<ect:source>isClose</ect:source>
+				<ect:destination>play</ect:destination>
+				<ect:reverseLink>true</ect:reverseLink>
+			</ect:Link>
+		</ect:createLink>
+	</ect:ThingDetails>	
+	<ect:ThingDetails rdf:ID="SceneObjectDetails">
+		<ect:thingType rdf:resource="#SceneObject" />
+		<ect:createLink>
+			<ect:Link>
+				<ect:source>visible</ect:source>
+				<ect:destination>play</ect:destination>
+				<ect:reverseLink>true</ect:reverseLink>
+			</ect:Link>
+		</ect:createLink>
+	</ect:ThingDetails>
+	<ect:UI rdf:ID="SoundFileSelectUI">
+		<ect:control>
+			<ect:FileSelect rdf:ID="SoundFileSelectControl">
+				<rdfs:label>Sound File</rdfs:label>
+				<dc:title>audioFilename</dc:title>
+			</ect:FileSelect>
+		</ect:control>
+	</ect:UI>
+	<ect:Sound>
+		<rdfs:label>Custom Sound 1</rdfs:label>
+		<ect:classification>Sounds/Custom</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>D:\custom1.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:ui rdf:resource="#SoundFileSelectUI" />
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Custom Sound 2</rdfs:label>
+		<ect:classification>Sounds/Custom</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>D:\custom2.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:ui rdf:resource="#SoundFileSelectUI" />		
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Custom Sound 3</rdfs:label>
+		<ect:classification>Sounds/Custom</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>D:\custom3.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:ui rdf:resource="#SoundFileSelectUI" />		
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Custom Sound 4</rdfs:label>
+		<ect:classification>Sounds/Custom</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>D:\custom4.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:ui rdf:resource="#SoundFileSelectUI" />		
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Custom Sound 5</rdfs:label>
+		<ect:classification>Sounds/Custom</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>D:\custom5.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:ui rdf:resource="#SoundFileSelectUI" />		
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Custom Sound 6</rdfs:label>
+		<ect:classification>Sounds/Custom</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>D:\custom6.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:ui rdf:resource="#SoundFileSelectUI" />		
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Custom Sound 7</rdfs:label>
+		<ect:classification>Sounds/Custom</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>D:\custom7.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:ui rdf:resource="#SoundFileSelectUI" />		
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Custom Sound 8</rdfs:label>
+		<ect:classification>Sounds/Custom</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>D:\custom8.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:ui rdf:resource="#SoundFileSelectUI" />		
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Custom Sound 9</rdfs:label>
+		<ect:classification>Sounds/Custom</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>D:\custom9.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:ui rdf:resource="#SoundFileSelectUI" />		
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Custom Sound 10</rdfs:label>
+		<ect:classification>Sounds/Custom</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>D:\custom10.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:ui rdf:resource="#SoundFileSelectUI" />		
+	</ect:Sound>	
+	<ect:Sound>
+		<rdfs:label>Apple Description</rdfs:label>
+		<ect:classification>Sounds/Descriptions</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/apple_description.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Banana Description</rdfs:label>
+		<ect:classification>Sounds/Descriptions</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/banana_description.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Cello Description</rdfs:label>
+		<ect:classification>Sounds/Descriptions</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/cello_description.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Compass Description</rdfs:label>
+		<ect:classification>Sounds/Descriptions</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/compass_description.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Drum Kit Description</rdfs:label>
+		<ect:classification>Sounds/Descriptions</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/drum_kit_description.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Earth Description</rdfs:label>
+		<ect:classification>Sounds/Descriptions</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/earth_description.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Guitar Description</rdfs:label>
+		<ect:classification>Sounds/Descriptions</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/guitar_description.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Piano Description</rdfs:label>
+		<ect:classification>Sounds/Descriptions</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/piano_description.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:createLink rdf:resource="#soundlink" />
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Pineapple Description</rdfs:label>
+		<ect:classification>Sounds/Descriptions</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/pineapple_description.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Son Goku Description</rdfs:label>
+		<ect:classification>Sounds/Descriptions</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/son_goku_description.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Cello Sample</rdfs:label>
+		<ect:classification>Sounds</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/cello_sample.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Drum Kit Sample</rdfs:label>
+		<ect:classification>Sounds</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/drum_kit_sample.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Guitar Sample</rdfs:label>
+		<ect:classification>Sounds</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/guitar_sample.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Orchestra Sample</rdfs:label>
+		<ect:classification>Sounds</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/orchestra_sample.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+	<ect:Sound>
+		<rdfs:label>Piano Sample</rdfs:label>
+		<ect:classification>Sounds</ect:classification>
+		<ect:plugsInto rdf:resource="#SoundARMarkerDetails" />
+		<ect:plugsInto rdf:resource="#SoundMarkerInteractionDetails" />		
+		<ect:plugsInto rdf:resource="#SceneObjectDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>AudioPlayer</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty rdf:resource="#soundDelayPropertyDetails" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>audioFilename</dc:title>
+						<rdf:value>resources/audio/piano_sample.wav</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+	</ect:Sound>
+</rdf:RDF>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:ect="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl#"
+	xml:base="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl">
+	<owl:Class rdf:ID="ARMarker">
+		<rdfs:label>AR Marker</rdfs:label>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="PhysicalThing" />
+		</rdfs:subClassOf>
+	</owl:Class>
+	<ect:ThingDetails rdf:ID="WebcamDetails">
+		<ect:thingType rdf:resource="#Webcam" />	
+		<ect:createLink>
+			<ect:Link rdf:ID="sourceSinkARMarkerLink">
+				<rdfs:label>source->sink</rdfs:label>
+				<ect:source>source</ect:source>
+				<ect:destination>sink</ect:destination>
+				<ect:reverseLink>true</ect:reverseLink>
+			</ect:Link>	
+		</ect:createLink>
+	</ect:ThingDetails>
+	<ect:ARMarker rdf:ID="ARMarkerA">
+		<rdfs:label>AR Marker A</rdfs:label>
+		<ect:classification>AR Markers</ect:classification>
+		<ect:plugsInto rdf:resource="#WebcamDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>ARToolkitGlyphTracker</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>glyphFile</dc:title>
+						<rdf:value>resources/markers/A.patt</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>					
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/armarkera.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:ARMarker>
+	<ect:ARMarker rdf:ID="ARMarkerB">
+		<rdfs:label>AR Marker B</rdfs:label>
+		<ect:classification>AR Markers</ect:classification>
+		<ect:plugsInto rdf:resource="#WebcamDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>ARToolkitGlyphTracker</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>glyphFile</dc:title>
+						<rdf:value>resources/markers/B.patt</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>					
+			</ect:ComponentDetails>
+		</ect:createComponent>		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/armarkerb.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:ARMarker>
+	<ect:ARMarker rdf:ID="ARMarkerC">
+		<rdfs:label>AR Marker C</rdfs:label>
+		<ect:classification>AR Markers</ect:classification>
+		<ect:plugsInto rdf:resource="#WebcamDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>ARToolkitGlyphTracker</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>glyphFile</dc:title>
+						<rdf:value>resources/markers/C.patt</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>		
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/armarkerc.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:ARMarker>
+	<ect:ARMarker rdf:ID="ARMarkerD">
+		<rdfs:label>AR Marker D</rdfs:label>
+		<ect:classification>AR Markers</ect:classification>
+		<ect:plugsInto rdf:resource="#WebcamDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>ARToolkitGlyphTracker</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>glyphFile</dc:title>
+						<rdf:value>resources/markers/D.patt</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>						
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/armarkerd.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:ARMarker>
+	<ect:ARMarker rdf:ID="ARMarkerE">
+		<rdfs:label>AR Marker E</rdfs:label>
+		<ect:classification>AR Markers</ect:classification>
+		<ect:plugsInto rdf:resource="#WebcamDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>ARToolkitGlyphTracker</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>glyphFile</dc:title>
+						<rdf:value>resources/markers/E.patt</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>			
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/armarkere.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:ARMarker>
+	<ect:ARMarker rdf:ID="ARMarkerF">
+		<rdfs:label>AR Marker F</rdfs:label>
+		<ect:classification>AR Markers</ect:classification>
+		<ect:plugsInto rdf:resource="#WebcamDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>ARToolkitGlyphTracker</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>glyphFile</dc:title>
+						<rdf:value>resources/markers/F.patt</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/armarkerf.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:ARMarker>
+	<ect:ARMarker rdf:ID="ARMarkerG">
+		<rdfs:label>AR Marker G</rdfs:label>
+		<ect:classification>AR Markers</ect:classification>
+		<ect:plugsInto rdf:resource="#WebcamDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>ARToolkitGlyphTracker</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>glyphFile</dc:title>
+						<rdf:value>resources/markers/G.patt</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>		
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/armarkerg.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:ARMarker>
+	<ect:ARMarker rdf:ID="ARMarkerh">
+		<rdfs:label>AR Marker H</rdfs:label>
+		<ect:classification>AR Markers</ect:classification>
+		<ect:plugsInto rdf:resource="#WebcamDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>ARToolkitGlyphTracker</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>glyphFile</dc:title>
+						<rdf:value>resources/markers/H.patt</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>						
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/armarkerh.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:ARMarker>
+	<ect:ARMarker rdf:ID="ARMarkerI">
+		<rdfs:label>AR Marker I</rdfs:label>
+		<ect:classification>AR Markers</ect:classification>
+		<ect:plugsInto rdf:resource="#WebcamDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>ARToolkitGlyphTracker</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>glyphFile</dc:title>
+						<rdf:value>resources/markers/I.patt</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>			
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/armarkeri.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:ARMarker>
+	<ect:ARMarker rdf:ID="ARMarkerJ">
+		<rdfs:label>AR Marker J</rdfs:label>
+		<ect:classification>AR Markers</ect:classification>
+		<ect:plugsInto rdf:resource="#WebcamDetails" />
+		<ect:createComponent>
+			<ect:ComponentDetails>
+				<dc:title>ARToolkitGlyphTracker</dc:title>
+				<ect:proxyComponent>true</ect:proxyComponent>
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>glyphFile</dc:title>
+						<rdf:value>resources/markers/J.patt</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ComponentDetails>
+		</ect:createComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/armarkerj.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:ARMarker>				
+</rdf:RDF>

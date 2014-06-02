@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:ect="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl#"
+	xml:base="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl">
+	<!--<owl:Class rdf:ID="SceneGraph">
+		<rdfs:label>3D Scene</rdfs:label>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="PhysicalThing" />
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:ID="SceneObject">
+		<rdfs:label>3D Object</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#PhysicalThing" />
+	</owl:Class>
+	<owl:Class rdf:ID="TexturableSceneObject">
+		<rdfs:label>Texturable 3D Object</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#SceneObject" />
+	</owl:Class>	
+	<ect:ComponentDetails rdf:ID="workshopScene2">
+		<dc:title>SceneGraphBase</dc:title>
+		<ect:createLink>
+			<ect:Link>
+				<ect:component>JMFVideoCaptureDevice</ect:component>
+				<ect:source>source</ect:source>
+				<ect:destination>sink</ect:destination>
+			</ect:Link>
+		</ect:createLink>
+		<ect:setProperty>
+			<ect:PropertyDetails>
+				<dc:title>x3dFilename</dc:title>
+				<rdf:value>C:\inScape\ect\resources\arauthoring\3dmodels\wsScene2\wsscene.x3d</rdf:value>
+			</ect:PropertyDetails>
+		</ect:setProperty>
+	</ect:ComponentDetails>
+	<ect:ThingDetails rdf:ID="ARMarkerDetails">
+		<ect:thingType rdf:resource="#ARMarker" />
+		<ect:createLink>
+			<ect:Link>
+				<ect:source>glyphTransform</ect:source>
+				<ect:destination>transformationMatrix</ect:destination>
+				<ect:reverseLink>true</ect:reverseLink>
+			</ect:Link>
+		</ect:createLink>
+		<ect:createLink>
+			<ect:Link>
+				<ect:source>glyphVisible</ect:source>
+				<ect:destination>visible</ect:destination>
+				<ect:reverseLink>true</ect:reverseLink>
+			</ect:Link>	
+		</ect:createLink>
+	</ect:ThingDetails>
+	<ect:SceneObject rdf:ID="wsGoldPictureFrame">
+		<rdfs:label>Gold Picture Frame</rdfs:label>
+		<ect:classification>3D Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>PictureFrame</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/pictureframe.jpg</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />		
+	</ect:SceneObject>
+	<ect:SceneObject rdf:ID="wsSlateLogSplitter">
+		<rdfs:label>Slate Log Splitter</rdfs:label>
+		<ect:classification>3D Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>SlateLogSplitter</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/slate.jpg</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />		
+	</ect:SceneObject>
+	<ect:SceneObject rdf:ID="wsGuttering">
+		<rdfs:label>Guttering</rdfs:label>
+		<ect:classification>3D Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Guttering</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/guttering.jpg</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />		
+	</ect:SceneObject>
+	<ect:SceneObject rdf:ID="wsChinaEgg">
+		<rdfs:label>China Egg</rdfs:label>
+		<ect:classification>3D Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>ChinaEgg</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/chinaegg.jpg</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />		
+	</ect:SceneObject>
+	<ect:SceneObject rdf:ID="wsWateringCan">
+		<rdfs:label>Watering Can</rdfs:label>
+		<ect:classification>3D Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>WateringCan</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/wateringcan.jpg</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />		
+	</ect:SceneObject>
+	<ect:SceneObject rdf:ID="wsRedBall">
+		<rdfs:label>Red Rubber Ball</rdfs:label>
+		<ect:classification>3D Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>RubberBall</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/redball.jpg</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />		
+	</ect:SceneObject>	
+	<ect:SceneObject rdf:ID="wsCartWheel">
+		<rdfs:label>Cart Wheel</rdfs:label>
+		<ect:classification>3D Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>CartWheel</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/cartwheel.jpg</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />		
+	</ect:SceneObject>-->
+	<ect:TexturableSceneObject rdf:ID="wsTexturableCube1">
+		<rdfs:label>Texturable Cube 1</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Cube1</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/cube.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />		
+	</ect:TexturableSceneObject>
+	<ect:TexturableSceneObject rdf:ID="wsTexturableCube2">
+		<rdfs:label>Texturable Cube 2</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Cube2</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/cube.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />		
+	</ect:TexturableSceneObject>	
+	<ect:TexturableSceneObject rdf:ID="wsTexturableCube3">
+		<rdfs:label>Texturable Cube 3</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Cube3</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/cube.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />
+	</ect:TexturableSceneObject>
+	<ect:TexturableSceneObject rdf:ID="wsTexturableCube4">
+		<rdfs:label>Texturable Cube 4</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Cube4</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/cube.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />
+	</ect:TexturableSceneObject>
+	<ect:TexturableSceneObject rdf:ID="wsTexturableCube5">
+		<rdfs:label>Texturable Cube 5</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Cube5</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/cube.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />
+	</ect:TexturableSceneObject>		
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare1">
+		<rdfs:label>Texturable Square 1</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane1</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>		
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare2">
+		<rdfs:label>Texturable Square 2</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane2</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare3">
+		<rdfs:label>Texturable Square 3</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane3</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare4">
+		<rdfs:label>Texturable Square 4</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane4</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare5">
+		<rdfs:label>Texturable Square 5</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane5</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>		
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare6">
+		<rdfs:label>Texturable Square 6</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane6</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>		
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare7">
+		<rdfs:label>Texturable Square 7</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane7</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare8">
+		<rdfs:label>Texturable Square 8</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane8</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare9">
+		<rdfs:label>Texturable Square 9</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane9</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare10">
+		<rdfs:label>Texturable Square 10</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane10</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>		
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare11">
+		<rdfs:label>Texturable Square 11</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane11</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>		
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare12">
+		<rdfs:label>Texturable Square 12</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane12</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare13">
+		<rdfs:label>Texturable Square 13</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane13</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare14">
+		<rdfs:label>Texturable Square 14</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane14</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>
+	<ect:TexturableSceneObject rdf:ID="wsTexturableSquare15">
+		<rdfs:label>Texturable Square 15</rdfs:label>
+		<ect:classification>3D Objects/Texturable Objects</ect:classification>
+		<ect:plugsInto rdf:resource="#ARMarkerDetails" />
+		<ect:createComponent rdf:resource="#workshopScene2" />
+		<ect:proxyComponent>
+			<ect:ComponentDetails>
+				<dc:title>SceneGraphObject</dc:title>
+				<ect:matchProperty>
+					<ect:PropertyDetails>
+						<dc:title>name</dc:title>
+						<rdf:value>Plane15</rdf:value>
+					</ect:PropertyDetails>
+				</ect:matchProperty>
+			</ect:ComponentDetails>
+		</ect:proxyComponent>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/rect.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#SceneUI" />			
+	</ect:TexturableSceneObject>
+</rdf:RDF>

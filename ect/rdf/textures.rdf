@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:ect="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl#"
+	xml:base="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl">
+	<owl:Class rdf:ID="Texture">
+		<rdfs:label>Texture</rdfs:label>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="PhysicalThing" />
+		</rdfs:subClassOf>
+	</owl:Class>
+	<ect:UI rdf:ID="TextureFileSelectUI">
+		<ect:control>
+			<ect:FileSelect rdf:ID="TextureFileSelectControl">
+				<rdfs:label>Sound File</rdfs:label>
+				<dc:title>textureImageFilename</dc:title>
+			</ect:FileSelect>
+		</ect:control>
+	</ect:UI>	
+	<ect:Texture>
+		<rdfs:label>Photo Texture 1</rdfs:label>
+		<ect:classification>3D Objects/Textures</ect:classification>
+		<ect:plugsInto>
+			<ect:ThingDetails>
+				<ect:thingType rdf:resource="#TexturableSceneObject" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>textureImageFilename</dc:title>
+						<rdf:value>C:\inScape\ect\resources\arauthoring\3dmodels\WorkshopScene\IMGP0918.JPG</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ThingDetails>
+		</ect:plugsInto>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/image.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#TextureFileSelectUI" />		
+	</ect:Texture>
+	<ect:Texture>
+		<rdfs:label>Photo Texture 2</rdfs:label>
+		<ect:classification>3D Objects/Textures</ect:classification>
+		<ect:plugsInto>
+			<ect:ThingDetails>
+				<ect:thingType rdf:resource="#TexturableSceneObject" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>textureImageFilename</dc:title>
+						<rdf:value>C:\inScape\ect\resources\arauthoring\3dmodels\WorkshopScene\DSCF0387.JPG</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ThingDetails>
+		</ect:plugsInto>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/image.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#TextureFileSelectUI" />		
+	</ect:Texture>
+	<ect:Texture>
+		<rdfs:label>Photo Texture 3</rdfs:label>
+		<ect:classification>3D Objects/Textures</ect:classification>
+		<ect:plugsInto>
+			<ect:ThingDetails>
+				<ect:thingType rdf:resource="#TexturableSceneObject" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>textureImageFilename</dc:title>
+						<rdf:value>C:\inScape\ect\resources\arauthoring\3dmodels\WorkshopScene\Zermatt_06_064.jpg</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ThingDetails>
+		</ect:plugsInto>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/image.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#TextureFileSelectUI" />		
+	</ect:Texture>
+	<ect:Texture>
+		<rdfs:label>Photo Texture 4</rdfs:label>
+		<ect:classification>3D Objects/Textures</ect:classification>
+		<ect:plugsInto>
+			<ect:ThingDetails>
+				<ect:thingType rdf:resource="#TexturableSceneObject" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>textureImageFilename</dc:title>
+						<rdf:value>C:\inScape\ect\resources\arauthoring\3dmodels\WorkshopScene\Zermatt_06_064.jpg</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ThingDetails>
+		</ect:plugsInto>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/image.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#TextureFileSelectUI" />		
+	</ect:Texture>
+	<ect:Texture>
+		<rdfs:label>Photo Texture 5</rdfs:label>
+		<ect:classification>3D Objects/Textures</ect:classification>
+		<ect:plugsInto>
+			<ect:ThingDetails>
+				<ect:thingType rdf:resource="#TexturableSceneObject" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>textureImageFilename</dc:title>
+						<rdf:value>C:\inScape\ect\resources\arauthoring\3dmodels\WorkshopScene\Zermatt_06_064.jpg</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ThingDetails>
+		</ect:plugsInto>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/image.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#TextureFileSelectUI" />		
+	</ect:Texture>
+	<ect:Texture>
+		<rdfs:label>Photo Texture 6</rdfs:label>
+		<ect:classification>3D Objects/Textures</ect:classification>
+		<ect:plugsInto>
+			<ect:ThingDetails>
+				<ect:thingType rdf:resource="#TexturableSceneObject" />
+				<ect:setProperty>
+					<ect:PropertyDetails>
+						<dc:title>textureImageFilename</dc:title>
+						<rdf:value>C:\inScape\ect\resources\arauthoring\3dmodels\WorkshopScene\Zermatt_06_064.jpg</rdf:value>
+					</ect:PropertyDetails>
+				</ect:setProperty>
+			</ect:ThingDetails>
+		</ect:plugsInto>
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/image.png</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+		<ect:ui rdf:resource="#TextureFileSelectUI" />		
+	</ect:Texture>	
+</rdf:RDF>

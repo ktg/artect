@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:ect="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl#"
+	xml:base="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl">
+	<owl:Class rdf:ID="SceneGraph">
+		<rdfs:label>3D Scene</rdfs:label>
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="PhysicalThing" />
+		</rdfs:subClassOf>
+	</owl:Class>
+	<ect:UI rdf:ID="SceneUI">
+		<ect:control>
+			<ect:Slider rdf:ID="RotateXSlider">
+				<rdfs:label>Rotate about x-axis</rdfs:label>
+				<ect:rangeMin>0</ect:rangeMin>
+				<ect:rangeMax>360</ect:rangeMax>
+				<ect:scale>360</ect:scale>			
+				<dc:title>authoringRotateX</dc:title>
+			</ect:Slider>
+		</ect:control>
+		<ect:control>
+			<ect:Slider rdf:ID="RotateYSlider">
+				<rdfs:label>Rotate about y-axis</rdfs:label>
+				<ect:rangeMin>0</ect:rangeMin>
+				<ect:rangeMax>360</ect:rangeMax>
+				<ect:scale>360</ect:scale>				
+				<dc:title>authoringRotateY</dc:title>
+			</ect:Slider>
+		</ect:control>
+		<ect:control>
+			<ect:Slider rdf:ID="RotateZSlider">
+				<rdfs:label>Rotate about z-axis</rdfs:label>
+				<ect:rangeMin>0</ect:rangeMin>
+				<ect:rangeMax>360</ect:rangeMax>
+				<ect:scale>360</ect:scale>					
+				<dc:title>authoringRotateZ</dc:title>
+			</ect:Slider>
+		</ect:control>
+		<ect:control>
+			<ect:Slider rdf:ID="ScaleXSlider">
+				<rdfs:label>Scale along x-axis</rdfs:label>
+				<ect:rangeMin>0</ect:rangeMin>
+				<ect:rangeMax>10</ect:rangeMax>
+				<ect:decimalPlaces>2</ect:decimalPlaces>	
+				<ect:origin>1</ect:origin>			
+				<dc:title>authoringScaleX</dc:title>
+			</ect:Slider>
+		</ect:control>
+		<ect:control>
+			<ect:Slider rdf:ID="ScaleYSlider">
+				<rdfs:label>Scale along y-axis</rdfs:label>
+				<ect:rangeMin>0</ect:rangeMin>
+				<ect:rangeMax>10</ect:rangeMax>
+				<ect:origin>1</ect:origin>				
+				<ect:decimalPlaces>2</ect:decimalPlaces>				
+				<dc:title>authoringScaleY</dc:title>
+			</ect:Slider>
+		</ect:control>
+		<ect:control>
+			<ect:Slider rdf:ID="ScaleZSlider">
+				<rdfs:label>Scale along z-axis</rdfs:label>
+				<ect:rangeMin>0</ect:rangeMin>
+				<ect:rangeMax>10</ect:rangeMax>
+				<ect:origin>1</ect:origin>				
+				<ect:decimalPlaces>2</ect:decimalPlaces>			
+				<dc:title>authoringScaleZ</dc:title>
+			</ect:Slider>
+		</ect:control>
+		<ect:control>
+			<ect:Slider rdf:ID="MoveXSlider">
+				<rdfs:label>Move along x-axis</rdfs:label>
+				<ect:rangeMin>-1000</ect:rangeMin>
+				<ect:rangeMax>1000</ect:rangeMax>
+				<dc:title>authoringTranslateX</dc:title>
+			</ect:Slider>
+		</ect:control>
+		<ect:control>
+			<ect:Slider rdf:ID="MoveYSlider">
+				<rdfs:label>Move along y-axis</rdfs:label>
+				<ect:rangeMin>-1000</ect:rangeMin>
+				<ect:rangeMax>1000</ect:rangeMax>
+				<dc:title>authoringTranslateY</dc:title>
+			</ect:Slider>
+		</ect:control>
+		<ect:control>
+			<ect:Slider rdf:ID="MoveZSlider">
+				<rdfs:label>Move along z-axis</rdfs:label>
+				<ect:rangeMin>-1000</ect:rangeMin>
+				<ect:rangeMax>1000</ect:rangeMax>
+				<dc:title>authoringTranslateZ</dc:title>
+			</ect:Slider>
+		</ect:control>
+	</ect:UI>
+	<owl:Class rdf:ID="SceneObject">
+		<rdfs:label>3D Object</rdfs:label>
+		<rdfs:subClassOf rdf:resource="#PhysicalThing" />
+	</owl:Class>	
+</rdf:RDF>

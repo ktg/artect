@@ -1,0 +1,457 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl#"
+	xml:base="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl">
+	<owl:Ontology>
+		<owl:imports rdf:resource="http://purl.org/dc/elements/1.1/" />
+	</owl:Ontology>
+	<owl:Class rdf:ID="HandheldComputer">
+		<rdfs:subClassOf>
+			<owl:Class rdf:ID="Computer" />
+		</rdfs:subClassOf>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			a handheld computer, e.g. PDA
+		</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:ID="ServerComputer">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			a server computer
+		</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#Computer" />
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:about="#Device">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			some kind of technical device, such as a computer
+		</rdfs:comment>
+		<rdfs:subClassOf>
+			<owl:Class rdf:about="#PhysicalThing" />
+		</rdfs:subClassOf>
+	</owl:Class>
+	<owl:Class rdf:about="#PhysicalThing">
+		<rdfs:label>Physical Thing</rdfs:label>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			Any physical thing. Not a digital thing. Use dc:description to describe it informally.
+		</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:about="#Computer">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			a computer device
+		</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Device" />
+	</owl:Class>
+	<owl:Class rdf:ID="PersonalComputer">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a PC</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="#Computer" />
+	</owl:Class>
+	<owl:Class rdf:about="#MediaFileLocation">
+		<rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			information about where (and when) a particular piece of media exists/existed as a file
+			on a particular device
+		</rdfs:comment>
+	</owl:Class>
+	<owl:Class rdf:ID="Location">
+		<rdfs:subClassOf rdf:resource="#PhysicalThing" />
+		<rdfs:label>Location</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="Joystick">
+		<rdfs:subClassOf rdf:resource="#Device" />
+		<rdfs:label>Joystick</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="JoystickButton">
+		<rdfs:subClassOf rdf:resource="#PhysicalThing" />
+		<rdfs:label>Joystick Button</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="PhidgetDevice">
+		<rdfs:subClassOf rdf:resource="#Device" />
+		<rdfs:label>Phidget Device</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="RFIDReader">
+		<rdfs:subClassOf rdf:resource="#Device" />
+		<rdfs:label>RFID Reader</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="PhidgetRFIDReader">
+		<rdfs:subClassOf rdf:resource="#PhidgetDevice" />
+		<rdfs:subClassOf rdf:resource="#RFIDReader" />
+		<rdfs:label>Phidget RFID Reader</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="PhidgetSensor">
+		<rdfs:subClassOf rdf:resource="#PhidgetDevice" />
+		<rdfs:label>Phidget Sensor</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="PhidgetTagSensor">
+		<rdfs:subClassOf rdf:resource="#PhysicalThing" />
+		<rdfs:label>Phidget Tag Sensor</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="PhidgetServoMotor">
+		<rdfs:subClassOf rdf:resource="#PhidgetDevice" />
+		<rdfs:label>Phidget Servo Motor</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="PhidgetLCDDisplay">
+		<rdfs:subClassOf rdf:resource="#PhidgetDevice" />
+		<rdfs:label>Phidget LCD Display</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="PhidgetInterfaceKit">
+		<rdfs:subClassOf rdf:resource="#PhidgetDevice" />
+		<rdfs:label>Phidget Interface Kit</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="PhidgetInput">
+		<rdfs:subClassOf rdf:resource="#PhysicalThing" />
+		<rdfs:label>Phidget Input</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="PhidgetDigitalInput">
+		<rdfs:subClassOf rdf:resource="#PhidgetInput" />
+		<rdfs:label>Phidget Digital Input</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="PhidgetDigitalOutput">
+		<rdfs:subClassOf rdf:resource="#PhysicalThing" />
+		<rdfs:label>Phidget Digital Output</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="PhidgetAnalogueInput">
+		<rdfs:subClassOf rdf:resource="#PhidgetInput" />
+		<rdfs:label>Phidget Analogue Input</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="PhidgetLCDTextLine">
+		<rdfs:subClassOf rdf:resource="#PhysicalThing" />
+		<rdfs:label>Phidget LCD Text Line</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="PhidgetServoOutput">
+		<rdfs:subClassOf rdf:resource="#PhysicalThing" />
+		<rdfs:label>Phidget Servo Output</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="SoftwareThing">
+		<rdfs:label>Software Thing</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="SoftwareContainer">
+		<rdfs:subClassOf rdf:resource="#SoftwareThing" />
+		<rdfs:label>Software Container</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="SoftwareComponentCapability">
+		<rdfs:subClassOf rdf:resource="#SoftwareThing" />
+		<rdfs:label>Software Component Capability</rdfs:label>
+		<image>
+			<MediaFileLocation>
+				<filePath>icons/capability_obj.gif</filePath>				
+			</MediaFileLocation>
+		</image>			
+	</owl:Class>
+	<owl:Class rdf:ID="SoftwareComponentRequest">
+		<rdfs:label>Software Component Request</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="#SoftwareThing" />
+		<image>
+			<MediaFileLocation>
+				<filePath>icons/componentRequest_obj.gif</filePath>				
+			</MediaFileLocation>
+		</image>			
+	</owl:Class>
+	<owl:Class rdf:ID="SoftwareComponent">
+		<rdfs:label>Software Component</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="#SoftwareThing" />
+		<image>
+			<MediaFileLocation>
+				<filePath>icons/component_obj.gif</filePath>				
+			</MediaFileLocation>
+		</image>		
+	</owl:Class>
+	<owl:Class rdf:ID="ComponentDetails">
+		<rdfs:subClassOf rdf:resource="#SoftwareThing" />
+		<rdfs:label>Software Component Details</rdfs:label>
+	</owl:Class>	
+	<owl:Class rdf:ID="SoftwareComponentProperty">
+		<rdfs:subClassOf rdf:resource="#SoftwareThing" />
+		<rdfs:label>Software Component Property</rdfs:label>		
+	</owl:Class>
+	<owl:Class rdf:ID="Link">
+		<rdfs:label>Link</rdfs:label>
+		<image>
+			<MediaFileLocation>
+				<filePath>icons/connect.gif</filePath>				
+			</MediaFileLocation>
+		</image>		
+	</owl:Class>
+	<owl:Class rdf:ID="ThingDetails">
+		<rdfs:label>Thing Details</rdfs:label>
+	</owl:Class>	
+	<owl:Class rdf:ID="SoftwareComponentPropertyLink">
+		<rdfs:subClassOf rdf:resource="#SoftwareThing" />
+		<rdfs:subClassOf rdf:resource="#Link" />		
+		<rdfs:label>Software Component Property Link</rdfs:label>
+	</owl:Class>
+	<owl:Class rdf:ID="Association">
+		<rdfs:subClassOf rdf:resource="#Link" />
+		<rdfs:label>Association</rdfs:label>		
+	</owl:Class>
+	<owl:Class rdf:ID="Rule">
+		<rdfs:subClassOf rdf:resource="#SoftwareThing" />
+	</owl:Class>
+	<owl:Class rdf:ID="BluetoothDevice">
+		<rdfs:subClassOf rdf:resource="#Device" />
+	</owl:Class>
+	<owl:Class rdf:ID="BluetoothUSBDevice">
+		<rdfs:subClassOf rdf:resource="#BluetoothDevice" />
+	</owl:Class>
+	<owl:Class rdf:ID="DrawObject">
+	</owl:Class>
+	<owl:Class rdf:ID="Image">
+		<rdfs:subClassOf rdf:resource="#DrawObject" />
+	</owl:Class>
+	<owl:Class rdf:ID="PropertyDetails">
+	</owl:Class>
+	<owl:Class rdf:ID="UI">
+	</owl:Class>
+	<owl:Class rdf:ID="Control">
+	</owl:Class>
+	<owl:Class rdf:ID="Slider">
+		<rdfs:subClassOf rdf:resource="#Control" />
+	</owl:Class>
+	<owl:Class rdf:ID="FileSelect">
+		<rdfs:subClassOf rdf:resource="#Control" />
+	</owl:Class>	
+	<owl:ObjectProperty rdf:ID="ui">
+		<rdfs:range rdf:resource="#UI" />
+		<rdfs:label>user interface</rdfs:label>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="control">
+		<rdfs:range rdf:resource="#Control" />
+		<rdfs:domain rdf:resource="#UI" />
+		<rdfs:label>control</rdfs:label>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="hide">
+		<rdfs:label>hide</rdfs:label>
+	</owl:ObjectProperty>	
+	<owl:ObjectProperty rdf:ID="rangeMax">
+		<rdfs:domain rdf:resource="#Slider" />
+		<rdfs:label>range maximum</rdfs:label>
+	</owl:ObjectProperty>	
+	<owl:ObjectProperty rdf:ID="rangeMin">
+		<rdfs:domain rdf:resource="#Slider" />
+		<rdfs:label>range minimum</rdfs:label>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="scale">
+		<rdfs:domain rdf:resource="#Slider" />
+		<rdfs:label>scale by</rdfs:label>
+	</owl:ObjectProperty>	
+	<owl:ObjectProperty rdf:ID="decimalPlaces">
+		<rdfs:domain rdf:resource="#Slider" />
+		<rdfs:label>decimal places</rdfs:label>	
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="origin">
+		<rdfs:domain rdf:resource="#Slider" />
+		<rdfs:label>origin</rdfs:label>	
+	</owl:ObjectProperty>	
+	<owl:ObjectProperty rdf:ID="setProperty">
+		<rdfs:label>set property</rdfs:label>
+	</owl:ObjectProperty>	
+	<owl:ObjectProperty rdf:ID="createInstance">
+		<rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+		<rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+		<rdfs:label>create instance</rdfs:label>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="hasPart">
+		<rdfs:range rdf:resource="#PhysicalThing" />
+		<rdfs:domain rdf:resource="#PhysicalThing" />
+		<rdfs:label>has Part</rdfs:label>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="hasButton">
+		<rdfs:subPropertyOf rdf:resource="#hasPart" />
+		<rdfs:range rdf:resource="#JoystickButton" />
+		<rdfs:domain rdf:resource="#Joystick" />
+		<rdfs:label>has Button</rdfs:label>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="source">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:label>source</rdfs:label>
+		<rdfs:domain rdf:resource="#Link" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="destination">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:label>destination</rdfs:label>
+		<rdfs:domain rdf:resource="#Link" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="selectDestination">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:label>select destination</rdfs:label>
+		<rdfs:domain rdf:resource="#Association" />
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="reverseLink">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:label>reverse link</rdfs:label>
+		<rdfs:domain rdf:resource="#Association" />
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+	</owl:ObjectProperty>	
+	<owl:ObjectProperty rdf:ID="image">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:label>image</rdfs:label>
+		<rdfs:range rdf:resource="#MediaFileLocation" />
+		<rdfs:domain rdf:resource="#PhysicalThing" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="isIn">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:label>is in</rdfs:label>
+		<rdfs:range rdf:resource="#Location" />
+		<rdfs:domain rdf:resource="#PhysicalThing" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="plugsInto">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:label>plugs into a</rdfs:label>
+		<rdfs:range rdf:resource="#ThingDetails" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="hasProxy">
+		<rdfs:label>has Proxy</rdfs:label>
+		<owl:inverseOf rdf:resource="#isProxyFor" />
+		<rdfs:domain rdf:resource="#SoftwareComponent" />
+		<rdfs:range rdf:resource="#PhysicalThing" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="isProxyFor">
+		<rdfs:label>is Proxy For</rdfs:label>
+		<owl:inverseOf rdf:resource="#hasProxy" />
+		<rdfs:domain rdf:resource="#PhysicalThing" />
+		<rdfs:range rdf:resource="#SoftwareComponent" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="defaultOutputProperty">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:domain rdf:resource="#SoftwareComponentCapability" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="defaultInputProperty">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:domain rdf:resource="#SoftwareComponentCapability" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="createComponent">
+		<rdfs:label>create component</rdfs:label>
+		<rdfs:range rdf:resource="#ComponentDetails" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="createComponentRequest">
+		<rdfs:label>create component request</rdfs:label>
+		<rdfs:range rdf:resource="#SoftwareComponentCapability" />
+	</owl:ObjectProperty>	
+	<owl:ObjectProperty rdf:ID="createdComponentRequest">
+		<rdfs:label>created component request</rdfs:label>	
+		<rdfs:range rdf:resource="#SoftwareComponentRequest" />
+	</owl:ObjectProperty>	
+	<owl:ObjectProperty rdf:ID="proxyComponent">
+		<rdfs:label>proxy component</rdfs:label>
+		<rdfs:range rdf:resource="#ComponentDetails" />
+	</owl:ObjectProperty>	
+	<owl:ObjectProperty rdf:ID="thingType">
+		<rdfs:label>Thing Type</rdfs:label>
+		<rdfs:domain rdf:resource="#ThingDetails" />
+		<rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="createLink">
+		<rdfs:label>create link</rdfs:label>
+		<rdfs:domain rdf:resource="#ThingDetails" />
+		<rdfs:range rdf:resource="#Link" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="createPropertyLink">
+		<rdfs:label>create link</rdfs:label>
+		<rdfs:domain rdf:resource="#SoftwareComponentProperty" />
+		<rdfs:range rdf:resource="#SoftwareComponentProperty" />
+	</owl:ObjectProperty>	
+	<owl:ObjectProperty rdf:ID="softwareComponent">
+		<rdfs:label>software component</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="#SoftwareComponent" />
+		<rdfs:domain rdf:resource="#SoftwareComponentProperty" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="request">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="#SoftwareComponentRequest" />
+		<rdfs:domain rdf:resource="#SoftwareComponent" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="capability">
+		<rdfs:label>software capability</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="#SoftwareComponentCapability" />
+		<rdfs:domain rdf:resource="#SoftwareThing" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="softwareContainer">
+		<rdfs:label>software container</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="#SoftwareContainer" />
+		<rdfs:domain rdf:resource="#SoftwareThing" />
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:ID="host">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="#Computer" />
+		<rdfs:domain rdf:resource="#SoftwareContainer" />
+	</owl:ObjectProperty>
+	<owl:DatatypeProperty rdf:ID="matchState">
+		<rdfs:label>match State</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+		<rdfs:domain rdf:resource="#PhysicalThing" />
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="xOffset">
+		<rdfs:label>x Offset</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="yOffset">
+		<rdfs:label>y Offset</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="width">
+		<rdfs:label>width</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
+		<rdfs:domain rdf:resource="#PhysicalThing" />
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="height">
+		<rdfs:label>height</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
+		<rdfs:domain rdf:resource="#PhysicalThing" />
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="depth">
+		<rdfs:label>depth</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
+		<rdfs:domain rdf:resource="#PhysicalThing" />
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="readOnly">
+		<rdfs:label>is read only</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+		<rdfs:domain rdf:resource="#SoftwareComponentProperty" />
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="isVisible">
+		<rdfs:label>is visible</rdfs:label>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+		<rdfs:domain rdf:resource="#SoftwareComponentProperty" />
+		<rdfs:domain rdf:resource="#SoftwareComponent" />		
+	</owl:DatatypeProperty>	
+	<owl:DatatypeProperty rdf:ID="propertyType">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+		<rdfs:domain rdf:resource="#SoftwareComponentProperty" />
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="propertyConnectionType">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+		<rdfs:domain rdf:resource="#SoftwareComponentProperty" />
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="classification">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+		<rdfs:domain rdf:resource="#SoftwareComponentCapability" />
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="hasMimeType">
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+	</owl:DatatypeProperty>
+	<owl:DatatypeProperty rdf:ID="filePath">
+		<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			full local pathname of file
+		</rdfs:comment>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+		<rdfs:domain rdf:resource="#MediaFileLocation" />
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+	</owl:DatatypeProperty>	
+</rdf:RDF>

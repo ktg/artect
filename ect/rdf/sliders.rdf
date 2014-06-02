@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:ect="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl#"
+	xml:base="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl">
+	<owl:Class rdf:ID="PhidgetSlider">
+		<rdfs:subClassOf rdf:resource="#PhidgetSensor" />
+		<rdfs:label>Slider</rdfs:label>
+	</owl:Class>	
+	<ect:ComponentDetails rdf:ID="PhidgetKitNoID">
+		<dc:title>PhidgetInterfaceKit</dc:title>
+		<ect:proxyComponent>true</ect:proxyComponent>
+		<ect:setProperty>
+			<ect:PropertyDetails>
+				<dc:title>configured</dc:title>
+				<rdf:value>true</rdf:value>
+			</ect:PropertyDetails>
+		</ect:setProperty>
+	</ect:ComponentDetails>		
+	<ect:PhidgetSlider rdf:ID="phidgetSlider1">
+		<rdfs:label>Slider 1</rdfs:label>
+		<ect:classification>Sliders</ect:classification>
+		<ect:createComponent rdf:resource="#PhidgetKitNoID" />
+		<ect:plugsInto>		
+			<ect:ThingDetails>
+				<ect:thingType rdf:resource="#SceneObject" />
+				<ect:createLink>
+					<ect:Link>
+						<ect:source>analogin0</ect:source>			
+						<!-- Determine what to link to via wizard -->
+						<ect:selectDestination>true</ect:selectDestination>
+						<ect:hide>authoring.*</ect:hide>
+						<ect:hide>name</ect:hide>
+						<ect:hide>visible</ect:hide>
+						<ect:hide>transformationMatrix</ect:hide>
+						<ect:hide>translate.</ect:hide>
+					</ect:Link>
+				</ect:createLink>				
+			</ect:ThingDetails>
+		</ect:plugsInto>
+		<ect:plugsInto>		
+			<ect:ThingDetails>
+				<ect:thingType rdf:resource="#X10LampDevice" />
+				<ect:createLink>
+					<ect:Link>
+						<ect:source>analogin0</ect:source>			
+						<ect:destination>level</ect:destination>
+					</ect:Link>
+				</ect:createLink>				
+			</ect:ThingDetails>
+		</ect:plugsInto>		
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/phidgetSlider.jpg</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:PhidgetSlider>
+	<ect:PhidgetSlider rdf:ID="phidgetSlider2">
+		<rdfs:label>Slider 2</rdfs:label>
+		<ect:classification>Sliders</ect:classification>		
+		<ect:createComponent rdf:resource="#PhidgetKitNoID" />
+		<ect:plugsInto>		
+			<ect:ThingDetails>
+				<ect:thingType rdf:resource="#SceneObject" />
+				<ect:createLink>
+					<ect:Link>
+						<ect:source>analogin1</ect:source>			
+						<!-- Determine what to link to via wizard -->
+						<ect:selectDestination>true</ect:selectDestination>
+						<ect:hide>authoring.*</ect:hide>
+						<ect:hide>name</ect:hide>
+						<ect:hide>visible</ect:hide>
+						<ect:hide>transformationMatrix</ect:hide>
+						<ect:hide>translate.</ect:hide>												
+					</ect:Link>
+				</ect:createLink>				
+			</ect:ThingDetails>
+		</ect:plugsInto>	
+		<ect:plugsInto>		
+			<ect:ThingDetails>
+				<ect:thingType rdf:resource="#X10LampDevice" />
+				<ect:createLink>
+					<ect:Link>
+						<ect:source>analogin1</ect:source>			
+						<ect:destination>level</ect:destination>
+					</ect:Link>
+				</ect:createLink>				
+			</ect:ThingDetails>
+		</ect:plugsInto>			
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/phidgetSlider.jpg</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:PhidgetSlider>
+	<ect:PhidgetSlider rdf:ID="phidgetSlider3">
+		<rdfs:label>Slider 3</rdfs:label>
+		<ect:classification>Sliders</ect:classification>		
+		<ect:createComponent rdf:resource="#PhidgetKitNoID" />
+		<ect:plugsInto>		
+			<ect:ThingDetails>
+				<ect:thingType rdf:resource="#SceneObject" />
+				<ect:createLink>
+					<ect:Link>
+						<ect:source>analogin2</ect:source>			
+						<!-- Determine what to link to via wizard -->
+						<ect:selectDestination>true</ect:selectDestination>
+						<ect:hide>authoring.*</ect:hide>
+						<ect:hide>name</ect:hide>
+						<ect:hide>visible</ect:hide>
+						<ect:hide>transformationMatrix</ect:hide>
+						<ect:hide>translate.</ect:hide>
+					</ect:Link>
+				</ect:createLink>				
+			</ect:ThingDetails>
+		</ect:plugsInto>	
+		<ect:plugsInto>		
+			<ect:ThingDetails>
+				<ect:thingType rdf:resource="#X10LampDevice" />
+				<ect:createLink>
+					<ect:Link>
+						<ect:source>analogin2</ect:source>			
+						<ect:destination>level</ect:destination>
+					</ect:Link>
+				</ect:createLink>				
+			</ect:ThingDetails>
+		</ect:plugsInto>			
+		<ect:image>
+			<ect:MediaFileLocation>
+				<ect:filePath>images/phidgetSlider.jpg</ect:filePath>
+			</ect:MediaFileLocation>
+		</ect:image>
+	</ect:PhidgetSlider>			
+</rdf:RDF>

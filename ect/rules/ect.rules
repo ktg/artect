@@ -1,0 +1,207 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix ect: <http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl#>.
+
+[componentDetailsCapabiltyRule:
+		(?componentDetails rdf:type ect:ComponentDetails),
+		(?componentDetails dc:title ?componentTitle),
+		(?capability dc:title ?componentTitle),
+		(?capability rdf:type ect:SoftwareComponentCapability),
+		(?capability ect:softwareContainer ?container),
+		(?container ect:host ?host),	
+		
+	-> (?componentDetails ect:capability ?capability)]
+
+[componentDetailsRequestRule:
+		(?association rdf:type ect:Association),
+		(?association ect:source ?source),
+		(?association ect:destination ?destination),
+		(?source ect:plugsInto ?thingDetails),
+		(?thingDetails ect:thingType ?thingType),
+		(?destination rdf:type ?thingType),
+		(?source ect:createComponent ?componentDetails),
+		
+	-> (?componentDetails ect:createComponentRequest ?association)]
+
+[componentSetPropertyRule:
+		(?componentDetails ect:createdComponentRequest ?request),
+		(?componentDetails rdf:type ect:ComponentDetails),		
+		(?component ect:request ?request),
+		(?component rdf:type ect:SoftwareComponent),
+		(?componentDetails ect:setProperty ?propertyDetails),
+		(?propertyDetails rdf:value ?propertyValue),
+		(?propertyDetails dc:title ?propertyTitle),		
+		(?property ect:softwareComponent ?component),
+		(?property dc:title ?propertyTitle),
+		
+	-> SetPropertyValue(?property, ?propertyValue)]				
+
+[componentProxyRule:
+		(?thing ect:createComponent ?componentDetails),
+		(?componentDetails ect:createdComponentRequest ?request),
+		(?componentDetails rdf:type ect:ComponentDetails),
+		(?componentDetails ect:proxyComponent 'true'),		
+		(?component ect:request ?request),
+		(?component rdf:type ect:SoftwareComponent),
+		
+	-> (?thing ect:hasProxy ?component),
+	   (?component ect:isProxyFor ?thing)]		
+
+[componentLinkRule:
+		(?componentDetails1 ect:createLink ?link),
+		(?componentDetails1 ect:createdComponentRequest ?request1),
+		(?componentDetails1 rdf:type ect:ComponentDetails),
+		(?link ect:component ?componentName),
+		(?link ect:source ?sourceName),
+		(?link ect:destination ?destinationName),
+		(?component1 ect:request ?request1),
+		(?component1 rdf:type ect:SoftwareComponent),
+		(?component2 dc:title ?componentName),
+		(?component2 rdf:type ect:SoftwareComponent),
+		(?source ect:softwareComponent ?component2),				
+		(?source dc:title ?sourceName),		
+		(?source rdf:type ect:SoftwareComponentProperty),
+		(?destination ect:softwareComponent ?component1),				
+		(?destination dc:title ?destinationName),
+		(?destination rdf:type ect:SoftwareComponentProperty),		
+		
+	->	(?source ect:createPropertyLink ?destination)]	
+
+[proxyMatchRule:
+		(?thing ect:proxyComponent ?componentDetails),
+		(?componentDetails dc:title ?componentTitle),
+		(?componentDetails rdf:type ect:ComponentDetails),			
+		(?component dc:title ?componentTitle),
+		(?component rdf:type ect:SoftwareComponent),	
+		(?componentDetails ect:matchProperty ?propertyDetails),
+		(?propertyDetails dc:title ?propertyTitle),
+		(?propertyDetails rdf:value ?propertyValue),
+		(?property ect:softwareComponent ?component),
+		(?property rdf:type ect:SoftwareComponentProperty),
+		(?property dc:title ?propertyTitle),
+		(?property rdf:value ?propertyValue),
+
+	-> (?thing ect:hasProxy ?component),
+	   (?component ect:isProxyFor ?thing)]
+
+//[proxyRule:
+//		(?thing ect:proxyComponent ?componentDetails),
+//		(?componentDetails dc:title ?componentTitle),
+//		(?componentDetails rdf:type ect:ComponentDetails),			
+//		(?component dc:title ?componentTitle),
+//		(?component rdf:type ect:SoftwareComponent),	
+//		noValue(?componentDetails, ect:matchProperty),
+//		noValue(?thing, ect:hasProxy),
+//		noValue(?component, ect:isProxyFor),
+//
+//	-> (?thing ect:hasProxy ?component),
+//	   (?component ect:isProxyFor ?thing)]
+
+[proxySetPropertyRule:
+		(?thing ect:hasProxy ?component),
+		(?thing ect:proxyComponent ?componentDetails),
+		(?componentDetails ect:setProperty ?propertyDetails),
+		(?componentDetails dc:title ?componentTitle),
+		(?component dc:title ?componentTitle),
+		(?propertyDetails dc:title ?propertyTitle),
+		(?propertyDetails rdf:value ?propertyValue),
+		(?property ect:softwareComponent ?component),
+		(?property dc:title ?propertyTitle),
+		(?property rdf:type ect:SoftwareComponentProperty),
+		
+	-> SetPropertyValue(?property, ?propertyValue)]	
+	
+[linkRuleReversed:
+		(?association rdf:type ect:Association),
+		(?association ect:source ?thing1),
+		(?association ect:destination ?thing2),
+		(?association ect:createLink ?link),		
+		(?thing1 ect:hasProxy ?component1),
+		(?thing2 ect:hasProxy ?component2),		
+		(?link ect:source ?sourceName),
+		(?link ect:destination ?destinationName),
+		(?link ect:reverseLink 'true'),
+		(?source dc:title ?sourceName),		
+		(?source rdf:type ect:SoftwareComponentProperty),		
+		(?source ect:softwareComponent ?component2),
+		(?destination dc:title ?destinationName),
+		(?destination rdf:type ect:SoftwareComponentProperty),		
+		(?destination ect:softwareComponent ?component1),
+		
+	->	(?source ect:createPropertyLink ?destination)]	
+
+[linkRule:
+		(?association rdf:type ect:Association),
+		(?association ect:source ?thing1),
+		(?association ect:destination ?thing2),
+		(?association ect:createLink ?link),		
+		(?thing1 ect:hasProxy ?component1),
+		(?thing2 ect:hasProxy ?component2),		
+		(?link ect:source ?sourceName),
+		(?link ect:destination ?destinationName),
+		noValue(?link, ect:reverseLink, 'true'),
+		(?source dc:title ?sourceName),		
+		(?source rdf:type ect:SoftwareComponentProperty),		
+		(?source ect:softwareComponent ?component1),
+		(?destination dc:title ?destinationName),
+		(?destination rdf:type ect:SoftwareComponentProperty),		
+		(?destination ect:softwareComponent ?component2),
+		
+	->	(?source ect:createPropertyLink ?destination)]
+
+[linkSetPropertyRule:
+		(?association rdf:type ect:Association),
+		(?association ect:source ?thing1),		
+		(?association ect:destination ?thing2),
+		
+		(?thing1 ect:plugsInto ?thingDetails),
+		(?thing2 rdf:type ?thingType),
+		(?thingDetails ect:thingType ?thingType),		
+		(?thingDetails ect:setProperty ?propertyDetails),
+				
+		(?thing2 ect:hasProxy ?component),
+		(?propertyDetails dc:title ?propertyTitle),
+		(?propertyDetails rdf:value ?propertyValue),
+		(?property ect:softwareComponent ?component),
+		(?property dc:title ?propertyTitle),
+		(?property rdf:type ect:SoftwareComponentProperty),
+		
+	-> SetPropertyValue(?property, ?propertyValue)]	
+
+[sensorProxyRule:
+		(?sensor rdf:type ect:PhidgetSensor),
+		(?association rdf:type ect:Association),
+		(?association ect:source ?sensor),
+		(?association ect:destination ?device),		
+		(?device ect:hasProxy ?property),
+		(?property rdf:type ect:SoftwareComponentProperty),
+		
+	->	(?sensor ect:hasProxy ?property)]
+	
+[proxyPropertyMappingRule:
+		(?device ect:hasProxy ?component),
+		(?device ect:hasPart ?part),
+		(?property ect:softwareComponent ?component),
+		(?property rdf:type ect:SoftwareComponentProperty),
+		(?property dc:title ?propertyname),
+		(?part dc:title ?propertyname),
+		
+	-> (?part ect:hasProxy ?property)]
+
+[rfidRule:
+		(?device rdf:type ect:RFIDReader),
+		(?device ect:hasProxy ?component),
+		(?device ect:isIn ?location),
+		(?device ect:xOffset ?xoffset),
+		(?device ect:yOffset ?yoffset),
+		
+		(?property ect:softwareComponent ?component),
+		(?property rdf:type ect:SoftwareComponentProperty),		
+		(?property dc:title 'currentTag'),
+		(?property rdf:value ?tagID),
+		
+		(?object ect:tagID ?tagID),
+		
+	->	(?object ect:isIn ?location),
+		(?object ect:xOffset ?xoffset),
+		(?object ect:yOffset ?yoffset)]

@@ -1,0 +1,10 @@
+http://www.mrl.nott.ac.uk/~axh/patterns/patt.hiro
+http://www.mrl.nott.ac.uk/~axh/patterns/patt.kanji
+http://www.mrl.nott.ac.uk/~axh/patterns/patt.sample1
+http://www.mrl.nott.ac.uk/~axh/patterns/patt.sample2
+http://www.mrl.nott.ac.uk/~axh/patterns/patt.a
+http://www.mrl.nott.ac.uk/~axh/patterns/patt.b
+http://www.mrl.nott.ac.uk/~axh/patterns/patt.c
+http://www.mrl.nott.ac.uk/~axh/patterns/patt.d
+http://www.mrl.nott.ac.uk/~axh/patterns/patt.e
+http://www.mrl.nott.ac.uk/~axh/patterns/patt.f

@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/wrappergen.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/equip4jcore.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ect-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta-oro-2.0.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xml-apis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/icu4j-4_2_1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jena.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/wrapperlib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xercesImpl.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

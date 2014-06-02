@@ -1,0 +1,47 @@
+#
+# RDFS rules
+#[rdf1and4: (?x ?p ?y) -> (?p rdf:type rdf:Property), (?x rdf:type rdfs:Resource), (?y rdf:type rdfs:Resource)]
+#[rdfs7: (?a rdf:type rdfs:Class) -> (?a rdfs:subClassOf rdfs:Resource)] 
+#[rdf4: (?x ?p ?y) -> (?p rdf:type rdf:Property)]
+
+#[rdfs2:  (?x ?p ?y), (?p rdfs:domain ?c) -> (?x rdf:type ?c)] 
+#[rdfs3:  (?x ?p ?y), (?p rdfs:range ?c) -> (?y rdf:type ?c)] 
+[rdfs5: (?a rdfs:subPropertyOf ?b), (?b rdfs:subPropertyOf ?c) -> (?a rdfs:subPropertyOf ?c)] 
+[rdfs6:  (?a ?p ?b), (?p rdfs:subPropertyOf ?q) -> (?a ?q ?b)] 
+[rdfs8:  (?a rdfs:subClassOf ?b), (?b rdfs:subClassOf ?c) -> (?a rdfs:subClassOf ?c)] 
+[rdfs9:  (?x rdfs:subClassOf ?y), (?a rdf:type ?x) -> (?a rdf:type ?y)] 
+[rdfs10: (?x rdf:type rdfs:ContainerMembershipProperty) -> (?x rdfs:subPropertyOf rdfs:member)] 
+
+#------------------------------------------------------------------
+# RDFS iff extensions needed for OWL
+#------------------------------------------------------------------
+#[rdfs2a: (?x rdfs:domain ?y), (?y rdfs:subClassOf ?z) -> (?x rdfs:domain ?z)]
+#[rdfs3a: (?x rdfs:range  ?y), (?y rdfs:subClassOf ?z) -> (?x rdfs:range  ?z)]
+
+#
+# OWL Rules
+
+[thing1: (?c rdf:type owl:Class) -> (?c rdfs:subClassOf owl:Thing)]
+
+# symmetric
+[symmetricProperty1: (?p rdf:type owl:SymmetricProperty), (?x ?p ?y) -> (?y ?p ?x)]
+
+
+# Transitive
+[transitivePropery1: (?p rdf:type owl:TransitiveProperty), (?a ?p ?b), (?b ?p ?c) -> (?a ?p ?c)]
+
+# Inverse
+[inverseOf1: (?P owl:inverseOf ?Q) -> (?Q owl:inverseOf ?P) ]
+
+[inverseOf2: (?P owl:inverseOf ?Q), (?X ?P ?Y) -> (?Y ?Q ?X) ]
+
+[inverseOf3: (?P owl:inverseOf ?Q), (?P rdf:type owl:FunctionalProperty) 
+						-> (?Q rdf:type owl:InverseFunctionalProperty) ]
+		
+[inverseOf4: (?P owl:inverseOf ?Q), (?P rdf:type owl:InverseFunctionalProperty) 
+						-> (?Q rdf:type owl:FunctionalProperty) ]
+
+
+# has Value
+[hasValue1: (?c rdf:type owl:Restriction), (?c owl:onProperty ?p), (?c owl:hasValue ?v), 
+		(?x rdf:type ?c) -> (?x ?p ?v) ]

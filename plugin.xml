@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="splashExtension" name="Splash Extensions" schema="schema/splashExtension.exsd"/>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="%product.name">
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini"/>
+         <property
+               name="windowImages"
+               value="icons/tangerine/16x16/application.gif,icons/tangerine/32x32/application.gif,icons/tangerine/48x48/application.gif,icons/tangerine/64x64/application.gif,icons/tangerine/128x128/application.gif"/>
+         <property
+               name="appName"
+               value="%product.name">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="help/contexts.xml"
+            plugin="ect.equip.physconf">
+      </contexts>
+   </extension>
+    <extension
+          point="org.eclipse.help.toc">
+       <toc
+             file="help/tutorial.xml"
+             primary="true">
+       </toc>
+    </extension>
+   <extension
+         point="org.eclipse.ui.cheatsheets.cheatSheetContent">
+      <category
+            id="ect.equip.physconf.category313535369"
+            name="ARTECT">
+      </category>
+      <cheatsheet
+            category="ect.equip.physconf.category313535369"
+            composite="false"
+            contentFile="$nl$/help/cheattest.xml"
+            id="ect.equip.physconf.cheatsheet2044139116"
+            name="Building a simple Augmented Reality Experience">
+      </cheatsheet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            category="ect.equip.physconf"
+            class="ect.equip.physconf.ui.wizards.ExportPhysicalRDFWizard"
+            id="ect.equip.physconf.ui.wizards.ExportPhysicalRDFWizard"
+            name="%wizard.name.1"/>
+      <category
+            id="ect.equip.physconf"
+            name="ect.equip.physconf">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <wizard
+            category="ect.equip.physconf"
+            class="ect.equip.physconf.ui.wizards.ImportRDFWizard"
+            icon="icons/sample.gif"
+            name="%wizard.name.0"
+            id="ect.equip.physconf.ui.wizards.ImportRDFWizard" />
+      <category
+            id="ect.equip.physconf"
+            name="ect.equip.physconf">
+		</category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.trim.status">
+         <toolbar
+               id="ect.equip.physconf.ui.toolbar">
+            <control
+                  class="ect.equip.physconf.ui.ConnectionControlContribution">
+            </control>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="ect.equip.physconf.ui.SoftwarePerspectiveFactory"
+            id="ect.equip.physconf.ui.SoftwarePerspective"
+            name="%perspective.name.0"/>
+      <perspective
+            class="ect.equip.physconf.ui.PhysicalPerspectiveFactory"
+            id="ect.equip.physconf.ui.PhysicalPerspective"
+            name="%perspective.name.1"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="%category.name.0"
+            id="ect.equip.physconf">
+      </category>
+      <view
+            name="%view.name.0"
+            icon="icons/thing.gif"
+            category="ect.equip.physconf"
+            class="ect.equip.physconf.ui.views.ActiveThingsView"
+            id="ect.equip.physconf.ui.views.ActiveThingsView">
+      </view>
+      <view
+            category="ect.equip.physconf"
+            class="ect.equip.physconf.ui.views.CapabilitiesView"
+            icon="icons/capability_obj.gif"
+            id="ect.equip.physconf.ui.views.CapabilitiesView"
+            name="%view.name.1"/>
+      <view
+            category="ect.equip.physconf"
+            class="ect.equip.physconf.ui.views.ComponentView"
+            icon="icons/component_obj.gif"
+            id="ect.equip.physconf.ui.views.ComponentsView"
+            name="%view.name.3"/>
+      <view
+            category="ect.equip.physconf"
+            class="ect.equip.physconf.ui.views.RulesView"
+            icon="icons/rule_obj.gif"
+            id="ect.equip.physconf.ui.views.RulesView"
+            name="%view.name.4"/>
+      <view
+            category="ect.equip.physconf"
+            class="ect.equip.physconf.ui.views.ComponentGraphView"
+            icon="icons/graph.gif"
+            id="ect.equip.physconf.ui.views.ComponentGraphView"
+            name="%view.name.5"/>
+      <view
+            category="ect.equip.physconf"
+            class="ect.equip.physconf.ui.views.PhysicalGraphView"
+            icon="icons/graph.gif"
+            id="ect.equip.physconf.ui.views.PhysicalGraphView"
+            name="%view.name.6"/>
+      <view
+            category="ect.equip.physconf"
+            class="ect.equip.physconf.ui.views.AllResourceView"
+            icon="icons/thing.gif"
+            id="ect.equip.physconf.ui.views.AllResourceView"
+            name="%view.name.7"/>
+      <view
+            category="ect.equip.physconf"
+            class="ect.equip.physconf.ui.views.PossibleThingsView"
+            id="ect.equip.physconf.ui.views.PossibleThingsView"
+            name="%view.name.8"/>
+      <view
+            category="ect.equip.physconf"
+            class="ect.equip.physconf.ui.views.PhysicalOverview"
+            id="ect.equip.physconf.ui.views.PhysicalOverview"
+            name="Overview">
+      </view>
+   </extension> 
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            actionProvider="ect.equip.physconf.ui.PropertyActionProvider"
+            contributorId="ect.equip.physconf.ui.views.ResourceView"
+            typeMapper="ect.equip.physconf.ui.filters.TypeMapper">
+         <propertyCategory category="ect.equip.physconf"/>
+      </propertyContributor>              
+   </extension>
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections contributorId="ect.equip.physconf.ui.views.ResourceView">    
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.StringPropertyValueSection"
+               filter="ect.equip.physconf.ui.tabs.sections.StringPropertyValueSection$StringPropertyFilter"
+               id="ect.equip.physconf.ui.tabs.sections.StringPropertyValueSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.IntPropertyValueSection"
+               filter="ect.equip.physconf.ui.tabs.sections.IntPropertyValueSection$IntPropertyFilter"
+               id="ect.equip.physconf.ui.tabs.sections.IntPropertyValueSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.FloatPropertyValueSection"
+               filter="ect.equip.physconf.ui.tabs.sections.FloatPropertyValueSection$FloatPropertyFilter"
+               id="ect.equip.physconf.ui.tabs.sections.FloatPropertyValueSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>        
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.DoublePropertyValueSection"
+               filter="ect.equip.physconf.ui.tabs.sections.DoublePropertyValueSection$DoublePropertyFilter"
+               id="ect.equip.physconf.ui.tabs.sections.DoubletPropertyValueSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>                 
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.BooleanPropertyValueSection"
+               filter="ect.equip.physconf.ui.tabs.sections.BooleanPropertyValueSection$BooleanPropertyFilter"
+               id="ect.equip.physconf.ui.tabs.sections.BooleanPropertyValueSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.ReadOnlyPropertyValueSection"
+               filter="ect.equip.physconf.ui.tabs.sections.ReadOnlyPropertyValueSection$ReadOnlyPropertyFilter"
+               id="ect.equip.physconf.ui.tabs.sections.ReadOnlyPropertyValueSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.HashtablePropertyValueSection"
+               filter="ect.equip.physconf.ui.tabs.sections.HashtablePropertyValueSection$HashtablePropertyFilter"
+               id="ect.equip.physconf.ui.tabs.sections.HashtablePropertyValueSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection> 
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.ListPropertyValueSection"
+               filter="ect.equip.physconf.ui.tabs.sections.ListPropertyValueSection$ListPropertyFilter"
+               id="ect.equip.physconf.ui.tabs.sections.ListPropertyValueSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>                    
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.CategorySection"
+               filter="ect.equip.physconf.ui.filters.CapabilityFilter"
+               id="ect.equip.physconf.ui.tabs.sections.CategorySection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.CommentSection"
+               filter="ect.equip.physconf.ui.filters.CapabilityFilter"
+               id="ect.equip.physconf.ui.tabs.sections.CommentSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.AdvancedPropertySection"
+               id="ect.equip.physconf.ui.tabs.sections.AdvancedPropertySection"
+               tab="ect.equip.physconf.ui.tabs.AdvancedTab">
+               <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>
+         <propertySection
+                  class="ect.equip.physconf.ui.tabs.sections.DocumentationSection"
+               filter="ect.equip.physconf.ui.filters.CapabilityFilter"
+               id="ect.equip.physconf.ui.tabs.sections.DocumentationSection"
+               tab="ect.equip.physconf.ui.tabs.DocumentationTab">
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>    
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.PropertiesSection"
+               filter="ect.equip.physconf.ui.filters.ComponentFilter"
+               id="ect.equip.physconf.ui.tabs.sections.PropertiesSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab">
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>       
+         <!--<propertySection
+               class="ect.equip.physconf.ui.tabs.sections.TypeSection"
+               id="ect.equip.physconf.ui.tabs.sections.TypeSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab">
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>-->
+         <!--<propertySection
+               class="ect.equip.physconf.ui.tabs.sections.ImageSection"
+               filter="ect.equip.physconf.ui.tabs.sections.ImageSection$ImagePropertyFilter"
+               id="ect.equip.physconf.ui.tabs.sections.ImageSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab">
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>-->               
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.LabelSection"
+               filter="ect.equip.physconf.ui.filters.ComponentFilter"
+               id="ect.equip.physconf.ui.tabs.sections.LabelSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource" />
+         </propertySection>     
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.VisibleSection"
+               filter="ect.equip.physconf.ui.tabs.sections.VisibleSection$PropertyFilter"
+               id="ect.equip.physconf.ui.tabs.sections.VisibleSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource"/>
+         </propertySection>            
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.RDFUISection"
+               filter="ect.equip.physconf.ui.tabs.sections.RDFUISection$UIFilter"
+               id="ect.equip.physconf.ui.tabs.sections.RDFUISection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab">
+            <input type="com.hp.hpl.jena.rdf.model.Resource" />
+         </propertySection>           
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.PhysicalThingSection"
+               filter="ect.equip.physconf.ui.filters.PhysicalThingFilter"
+               id="ect.equip.physconf.ui.tabs.sections.PhysicalThingSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource" />
+         </propertySection>
+         <propertySection
+               class="ect.equip.physconf.ui.tabs.sections.AssociationSection"
+               filter="ect.equip.physconf.ui.tabs.sections.AssociationSection$AssociationFilter"
+               id="ect.equip.physconf.ui.tabs.sections.AssociationSection"
+               tab="ect.equip.physconf.ui.tabs.GeneralTab" >
+            <input type="com.hp.hpl.jena.rdf.model.Resource" />
+         </propertySection> 
+      </propertySections>
+   </extension>
+    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="ect.equip.physconf.ui.views.ResourceView">
+         <propertyTab category="ect.equip.physconf"
+               id="ect.equip.physconf.ui.tabs.GeneralTab"
+            label="General"/>
+         <propertyTab
+               afterTab="ect.equip.physconf.ui.tabs.DocumentationTab"
+               category="ect.equip.physconf"
+               id="ect.equip.physconf.ui.tabs.AdvancedTab"
+               label="Advanced"/>
+         <propertyTab
+               afterTab="ect.equip.physconf.ui.tabs.GeneralTab"
+               category="ect.equip.physconf"
+               id="ect.equip.physconf.ui.tabs.DocumentationTab"
+               label="Documentation"/>
+         <propertyTab
+               afterTab="ect.equip.physconf.ui.tabs.GeneralTab"
+               category="ect.equip.physconf"
+               id="ect.equip.physconf.ui.tabs.PropertiesTab"
+               label="Properties"/>
+         <propertyTab
+               category="ect.equip.physconf"
+               id="ect.equip.physconf.ui.tabs.TestTab"
+               label="Test"/>
+      </propertyTabs>
+   </extension>
+    <extension
+          point="org.eclipse.ui.actionSets">
+       <actionSet
+             id="ect.equip.physconf.actionSet"
+             label="ARTECT Actions"
+             visible="true">
+          <action
+                class="ect.equip.physconf.ui.commands.LoadAction"
+                icon="icons/fldr_obj.gif"
+                id="ect.equip.physconf.actions.LoadAction"
+                label="&amp;Load"
+                menubarPath="file/new.ext"
+                style="push"
+                toolbarPath="org.eclipse.ui.workbench.file/new.ext"
+                tooltip="Load">
+          </action>
+       </actionSet>
+    </extension>
+    <extension
+          point="org.eclipse.ui.splashHandlers">
+       <splashHandler
+             class="ect.equip.physconf.splashHandlers.ExtensibleSplashHandler"
+             id="ect.equip.physconf.splashHandlers.extensible">
+       </splashHandler>
+       <splashHandlerProductBinding
+             productId="ect.equip.physconf.product"
+             splashId="ect.equip.physconf.splashHandlers.extensible">
+       </splashHandlerProductBinding>
+    </extension>
+    <extension
+          point="ect.equip.physconf.splashExtension">
+       <splashExtension
+             icon="icons/af.png"
+             id="af"
+             tooltip="Application Framework">
+       </splashExtension>
+       <splashExtension
+             icon="icons/embedded.png"
+             id="embedded"
+             tooltip="Embedded">
+       </splashExtension>
+       <splashExtension
+             icon="icons/enterprise.png"
+             id="enterprise"
+             tooltip="Enterprise">
+       </splashExtension>
+       <splashExtension
+             icon="icons/languages.png"
+             id="languages"
+             tooltip="Languages">
+       </splashExtension>
+       <splashExtension
+             icon="icons/rcp.png"
+             id="rcp"
+             tooltip="RCP">
+       </splashExtension>
+    </extension>  
+</plugin>

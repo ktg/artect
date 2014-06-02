@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="wrap" name="rdf">
+	<description>
+        rdf explorations for e-social science
+    </description>
+	<!-- set global properties for this build -->
+	<property location="src" name="src" />
+	<property location="generated" name="generated" />
+	<property value="digitalrecord" name="generated.package" />
+	<property location="build" name="build" />
+	<property location="dist" name="dist" />
+	<property location="docs" name="docs" />
+	<property location="${docs}/javadoc" name="javadoc" />
+	<property location="kazuki" name="kazuki.home" />
+	<property location="c:/j2sdk1.4.2_08/lib/tools.jar" name="java.tools.jar" />
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${generated}" />
+		<mkdir dir="${generated}/${generated.package}" />
+	</target>
+
+	<path id="jenaClasspath">
+		<pathelement location="${java.tools.jar}" />
+		<fileset dir="lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement location="${build}" />
+	</path>
+
+	<target name="schemagen" depends="init">
+		<mkdir dir="generated/digitalrecord/wrapped" />
+		<java fork="true" classname="jena.schemagen">
+			<classpath refid="jenaClasspath" />
+			<arg value="-i" />
+			<arg value="ect/ontologies/digitalrecord_ktg.owl" />
+			<arg value="--package" />
+			<arg value="digitalrecord.wrapped" />
+			<arg value="-o" />
+			<arg value="generated/digitalrecord/wrapped/Schema.java" />
+			<arg value="--ontology" />
+			<arg value="--owl" />
+			<arg value="-n" />
+			<arg value="Schema" />
+		</java>
+	</target>
+
+	<target depends="init" description="compile the common source " name="compile">
+		<!-- Compile the java code from ${common-src} into ${common-build} -->
+		<javac destdir="${build}" srcdir="${src}" excludes="**/test/**" debug="true">
+			<classpath refid="jenaClasspath" />
+		</javac>
+		<copy todir="${build}">
+			<fileset dir="${src}">
+				<include name="**/*.gif" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="wrap">
+		<java fork="true" classname="digitalrecord.ontology.tools.WrapperGen">
+			<classpath refid="jenaClasspath" />
+			<arg value="-d" />
+			<arg value="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl" />
+			<arg value="file:ect/ontologies/digitalrecord_ktg.owl" />
+			<arg value="-o" />
+			<arg value="generated" />
+			<arg value="-m" />
+			<arg value="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl#" />
+			<arg value="digitalrecord.wrapped" />
+			<arg value="http://www.ncess.ac.uk/nodes/digitalrecord/digitalrecord.owl" />
+		</java>
+	</target>
+
+	<target name="clean">
+		<delete dir="${build}" />
+		<delete dir="${dist}" />
+	</target>
+	<target name="clean.all" depends="clean">
+		<delete dir="${generated}" />
+	</target>
+</project>
